@@ -5,21 +5,21 @@
 class Alethia < Formula
   desc "Alethia CLI for managing infrastructure configurations."
   homepage "https://github.com/alethialabs-io/alethia-cli"
-  version "0.3.0"
+  version "0.4.0"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.3.0/alethia_Darwin_x86_64.tar.gz"
-      sha256 "f147fde6af9f5005407c49f02a1c1f467b9829764e29aff0f7343ee099359e38"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.4.0/alethia_Darwin_x86_64.tar.gz"
+      sha256 "f51788755bfece0ae6af74224bcf6eff8e97d1676bc805a4dfc0c7e426341c85"
 
       define_method(:install) do
         bin.install "alethia"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.3.0/alethia_Darwin_arm64.tar.gz"
-      sha256 "629cf54572eac7c1bf7bdc17dc0776ff747e1364bd953125371b8d96758a3638"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.4.0/alethia_Darwin_arm64.tar.gz"
+      sha256 "93670679b4296e08b1b20d7d1c6681afa866cca8aa6ce86d55e0789ab1f6fb9d"
 
       define_method(:install) do
         bin.install "alethia"
@@ -29,15 +29,15 @@ class Alethia < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.3.0/alethia_Linux_x86_64.tar.gz"
-      sha256 "ba968893c834fb5f9fb89862002ba1c422f26d215f7555bf287b1665d594747f"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.4.0/alethia_Linux_x86_64.tar.gz"
+      sha256 "08e68e9355fc859a54da7d673ff18b05bb3f894dfadc5d0eba67dd25ab0054eb"
       define_method(:install) do
         bin.install "alethia"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.3.0/alethia_Linux_arm64.tar.gz"
-      sha256 "39f027b6ab2c818ae0fb651e6070aa17e914a5353c1ae1f09dd48cdcece3376c"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.4.0/alethia_Linux_arm64.tar.gz"
+      sha256 "4dae12b0ad360d9560cbc7b84ecab23a1268ba5965ce84315d3461f2678a1e5d"
       define_method(:install) do
         bin.install "alethia"
       end
