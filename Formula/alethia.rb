@@ -5,41 +5,57 @@
 class Alethia < Formula
   desc "Alethia CLI for managing infrastructure configurations."
   homepage "https://github.com/alethialabs-io/alethia-cli"
-  version "0.13.0"
+  version "0.14.0"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.13.0/alethia_Darwin_x86_64.tar.gz"
-      sha256 "e2a2c749d73c1c476a2a077ae106d141de20aae37682f0edd76ee3ddb3900722"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.14.0/alethia_Darwin_x86_64.tar.gz"
+      sha256 "d2835d9fb516d4a020ef79a5a08b846140b13f17729af8964a4e049a19ac2ee1"
 
       define_method(:install) do
         bin.install "alethia"
+        bash_completion.install "completions/alethia.bash" => "alethia"
+        zsh_completion.install "completions/_alethia"
+        fish_completion.install "completions/alethia.fish"
+        man1.install Dir["manpages/*.1.gz"]
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.13.0/alethia_Darwin_arm64.tar.gz"
-      sha256 "01da97b8b176e5a3a16650a5b2bb3bcfede866b479164f3051f8f3432ed8e68e"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.14.0/alethia_Darwin_arm64.tar.gz"
+      sha256 "21ef4cd661446283fdcb1aee600b95fc3007d88b24ccee28df6cf44e7713f20a"
 
       define_method(:install) do
         bin.install "alethia"
+        bash_completion.install "completions/alethia.bash" => "alethia"
+        zsh_completion.install "completions/_alethia"
+        fish_completion.install "completions/alethia.fish"
+        man1.install Dir["manpages/*.1.gz"]
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.13.0/alethia_Linux_x86_64.tar.gz"
-      sha256 "145749b302a874ffbfb557bcfd7998b664bf6d96ff778490852d4e4a1db22a5e"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.14.0/alethia_Linux_x86_64.tar.gz"
+      sha256 "a50da7eede5299ab53ed9de8a1f07306c2a11244eb03fa022608e603fe3795aa"
       define_method(:install) do
         bin.install "alethia"
+        bash_completion.install "completions/alethia.bash" => "alethia"
+        zsh_completion.install "completions/_alethia"
+        fish_completion.install "completions/alethia.fish"
+        man1.install Dir["manpages/*.1.gz"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.13.0/alethia_Linux_arm64.tar.gz"
-      sha256 "9e9562337caef5961e6d96825e566268c0df4e825b3d5effcb3fdce2bc41b02a"
+      url "https://github.com/alethialabs-io/alethia-cli/releases/download/v0.14.0/alethia_Linux_arm64.tar.gz"
+      sha256 "a0ae4d35d5ce05b56c1203ed56cfe9af842b7b65cb2da6ce1d021fe211530fae"
       define_method(:install) do
         bin.install "alethia"
+        bash_completion.install "completions/alethia.bash" => "alethia"
+        zsh_completion.install "completions/_alethia"
+        fish_completion.install "completions/alethia.fish"
+        man1.install Dir["manpages/*.1.gz"]
       end
     end
   end
